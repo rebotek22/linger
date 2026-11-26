@@ -41,9 +41,9 @@ type Entry =
 type CardState = "waiting" | "relaunch" | "granted" | "declined" | "expired";
 type FinishedState = Extract<CardState, "granted" | "declined" | "expired">;
 
-// "Linger" is the product's name; the other subject is described.
+// "Zerospace" is the product's name; the other subject is described.
 const subjectLabels: Record<Subject, Message<string> | string> = {
-  linger: "Linger",
+  linger: "Zerospace",
   computer_use: cardsMessages.subjectComputerUse,
 };
 const permissionLabels: Record<PermissionId, Message<string>> = {

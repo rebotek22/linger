@@ -156,7 +156,7 @@ describe("computerReadiness", () => {
     expect(preferredComputerRuntime([])).toBeUndefined();
   });
 
-  it("offers Antigravity only on a Computer whose Linger can run it", () => {
+  it("offers Antigravity only on a Computer whose Zerospace can run it", () => {
     const old = computer([], { daemon_version: "0.52.0" });
     expect(appSupported(old, "antigravity")).toBe(false);
     expect(appSupported(old, "codex")).toBe(true);

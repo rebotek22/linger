@@ -340,7 +340,7 @@ describe("a refused microphone", () => {
   it("points the Mac desktop app to System Settings", async () => {
     vi.stubGlobal("window", { lingerDesktop: { platform: "darwin" } });
     expect(describeVoiceMediaError(refused)).toBe(
-      "Linger can't use the microphone. Allow Linger in System Settings › Privacy & Security › Microphone, then try again.",
+      "Zerospace can't use the microphone. Allow Zerospace in System Settings › Privacy & Security › Microphone, then try again.",
     );
 
     await setLanguage("zh-CN");

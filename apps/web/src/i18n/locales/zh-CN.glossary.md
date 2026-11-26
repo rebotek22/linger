@@ -11,7 +11,7 @@ elsewhere.
 
 | Term                                 | Note                                               |
 | ------------------------------------ | -------------------------------------------------- |
-| Linger, TeamHub                      | Product names.                                     |
+| Zerospace, TeamHub                   | Product names.                                     |
 | Agent, Room, Runtime, Skill, Routine | Product concepts.                                  |
 | Another Me, Wiki                     | Feature names.                                     |
 | CLI, PowerShell, npm, Node.js        | Tools.                                             |

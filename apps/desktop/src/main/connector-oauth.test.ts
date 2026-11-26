@@ -16,7 +16,7 @@ it("accepts only the assigned browser callback and consumes it once", async () =
     callback.searchParams.set("connected_account_id", "ca_returned");
     const response = await fetch(callback);
     expect(response.status).toBe(200);
-    expect(await response.text()).toContain("back to Linger");
+    expect(await response.text()).toContain("back to Zerospace");
     expect(returned).toHaveBeenCalledExactlyOnceWith("ca_returned");
     expect((await fetch(callback)).status).toBe(404);
   } finally {

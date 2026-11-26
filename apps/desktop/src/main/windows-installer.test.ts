@@ -26,7 +26,7 @@ const order = (text: string, ...steps: string[]) => {
 
 it("stops an earlier release before an install replaces its files", () => {
   order(
-    block('Section "Linger"', "SectionEnd"),
+    block('Section "Zerospace"', "SectionEnd"),
     "Call StopEarlierLinger",
     "Call CloseLinger",
     'RMDir /r "$INSTDIR\\resources"',
@@ -134,7 +134,7 @@ it("shows an update only its progress page", () => {
   order(
     block("Function ShowProgress", "FunctionEnd"),
     "$Updating",
-    "Updating Linger to ${VERSION}",
+    "Updating Zerospace to ${VERSION}",
   );
   // A custom folder from /D= stays where it is.
   expect(script).toContain(
@@ -144,7 +144,7 @@ it("shows an update only its progress page", () => {
 
 it("starts the earlier app after a failed update only if no file was replaced", () => {
   order(
-    block('Section "Linger"', "SectionEnd"),
+    block('Section "Zerospace"', "SectionEnd"),
     "Call RemoveLegacyInstall",
     "StrCpy $Replacing 1",
     'RMDir /r "$INSTDIR\\resources"',

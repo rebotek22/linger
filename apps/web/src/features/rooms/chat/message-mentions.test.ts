@@ -102,13 +102,13 @@ describe("the Skill picker shares the mention boundary", () => {
   it("opens after an unspaced script and stays closed after a word", async () => {
     const { findMessageSkillQuery } =
       await import("./message-composer-references");
-    const mentions = [{ kind: "agent", display_name: "Linger" }] as never;
+    const mentions = [{ kind: "agent", display_name: "Zerospace" }] as never;
     // The picker needs a Mentioned Agent before the slash, as it always has.
-    const unspaced = "@Linger \u8cc7\u6599/";
+    const unspaced = "@Zerospace \u8cc7\u6599/";
     expect(
       findMessageSkillQuery(unspaced, unspaced.length, mentions),
     ).toMatchObject({ query: "" });
-    for (const body of ["@Linger a/", "@Linger x//", "@Linger alice/"])
+    for (const body of ["@Zerospace a/", "@Zerospace x//", "@Zerospace alice/"])
       expect(findMessageSkillQuery(body, body.length, mentions)).toBeNull();
   });
 });

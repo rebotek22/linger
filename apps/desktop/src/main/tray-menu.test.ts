@@ -135,7 +135,7 @@ describe("trayMenu", () => {
     expect(item).toEqual({
       kind: "action",
       action: "install-update",
-      label: "Download Linger 0.17.0…",
+      label: "Download Zerospace 0.17.0…",
     });
   });
 });
@@ -144,13 +144,13 @@ describe("updateNotice", () => {
   it("names what clicking it does", () => {
     expect(notice({ kind: "ready", version: "0.17.0" })).toEqual({
       title: "Update ready",
-      body: "Linger 0.17.0 is downloaded. Click to restart Linger and update.",
+      body: "Zerospace 0.17.0 is downloaded. Click to restart Zerospace and update.",
     });
     expect(
       notice({ kind: "available", version: "0.17.0", url: "https://x" }),
     ).toEqual({
       title: "Update available",
-      body: "Linger 0.17.0 is available. Click to open its download page.",
+      body: "Zerospace 0.17.0 is available. Click to open its download page.",
     });
   });
 });

@@ -599,7 +599,7 @@ describe("TeamHub routes", () => {
       }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: "Can't reach Linger" }),
+      screen.getByRole("heading", { name: "Can't reach Zerospace" }),
     ).toBeVisible();
   });
 

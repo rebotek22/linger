@@ -7,7 +7,7 @@ Unicode true
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
 
-Name "Linger"
+Name "Zerospace"
 OutFile "${OUTPUT}"
 !define UNINSTALL_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\Linger"
 InstallDir "$LOCALAPPDATA\Programs\Linger"
@@ -26,15 +26,15 @@ SetCompressor zlib
 SetDatablockOptimize off
 
 VIProductVersion "${NUMERIC_VERSION}.0"
-VIAddVersionKey "ProductName" "Linger"
-VIAddVersionKey "FileDescription" "Linger Setup"
+VIAddVersionKey "ProductName" "Zerospace"
+VIAddVersionKey "FileDescription" "Zerospace Setup"
 VIAddVersionKey "FileVersion" "${VERSION}"
 VIAddVersionKey "ProductVersion" "${VERSION}"
-VIAddVersionKey "CompanyName" "Linger"
-VIAddVersionKey "LegalCopyright" "Linger"
+VIAddVersionKey "CompanyName" "Zerospace"
+VIAddVersionKey "LegalCopyright" "Zerospace"
 
-!define MUI_ICON "${STAGE}\resources\linger.ico"
-!define MUI_UNICON "${STAGE}\resources\linger.ico"
+!define MUI_ICON "${STAGE}\resources\zerospace.ico"
+!define MUI_UNICON "${STAGE}\resources\zerospace.ico"
 ; The app's self-update runs this setup with /update /relaunch after it quit
 ; (updater.ts): the progress page alone, which closes when done (the finish
 ; page's MUI sets SetAutoClose true), then Linger starts. Unlike /S, the
@@ -68,7 +68,7 @@ FunctionEnd
 
 Function ShowProgress
   StrCmp $Updating 1 0 done
-  !insertmacro MUI_HEADER_TEXT "Updating Linger" "Updating Linger to ${VERSION}..."
+  !insertmacro MUI_HEADER_TEXT "Updating Zerospace" "Updating Zerospace to ${VERSION}..."
   done:
 FunctionEnd
 
@@ -86,7 +86,7 @@ Function ${UN}CloseLinger
   IfFileExists "$INSTDIR\Linger.exe" 0 done
   Delete "$INSTDIR\Linger.exe"
   IfErrors 0 done
-  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Linger is running. Quit it from its icon in the notification area, then select Retry." IDRETRY again
+  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Zerospace is running. Quit it from its icon in the notification area, then select Retry." IDRETRY again
   Abort
   again:
   Call ${UN}StopLinger
@@ -106,7 +106,7 @@ Function RemoveLegacyInstall
   IfFileExists "${LEGACY_INSTDIR}\Linger.exe" 0 removed
   Delete "${LEGACY_INSTDIR}\Linger.exe"
   IfErrors 0 removed
-  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Linger is running. Quit it from its icon in the notification area, then select Retry." IDRETRY retry
+  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Zerospace is running. Quit it from its icon in the notification area, then select Retry." IDRETRY retry
   Abort
   removed:
   RMDir /r "${LEGACY_INSTDIR}"
@@ -141,15 +141,15 @@ Function ${UN}StopLinger
   ExecWait '"$INSTDIR\Linger.exe" --quit'
   stop:
   IfFileExists "$R0" 0 stopped
-  DetailPrint "Stopping Linger on this computer..."
+  DetailPrint "Stopping Zerospace on this computer..."
   System::Call 'Kernel32::SetEnvironmentVariable(t "ELECTRON_RUN_AS_NODE", t "1")'
   nsExec::ExecToLog '"$INSTDIR\Linger.exe" "$R0" --instance desktop --stop'
   Pop $0
   System::Call 'Kernel32::SetEnvironmentVariable(t "ELECTRON_RUN_AS_NODE", n)'
   StrCmp $0 "0" stopped
-  DetailPrint "Some of Linger's services may still be running."
+  DetailPrint "Some of Zerospace's services may still be running."
 !if "${UN}" == "un."
-  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Linger couldn't stop all of its services. Close Linger and try again." /SD IDCANCEL IDRETRY stop
+  MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Zerospace couldn't stop all of its services. Close Zerospace and try again." /SD IDCANCEL IDRETRY stop
   SetErrorLevel 1
   Abort
 !endif
@@ -191,7 +191,7 @@ Function StopEarlierLinger
   done:
 FunctionEnd
 
-Section "Linger"
+Section "Zerospace"
   SetOutPath "$INSTDIR"
   Call StopEarlierLinger
   Call CloseLinger
@@ -205,9 +205,9 @@ Section "Linger"
   WriteUninstaller "$INSTDIR\Uninstall Linger.exe"
   ; The app writes its notification id into this shortcut (index.ts).
   CreateShortcut "$SMPROGRAMS\Linger.lnk" "$INSTDIR\Linger.exe"
-  WriteRegStr HKCU "${UNINSTALL_KEY}" "DisplayName" "Linger"
+  WriteRegStr HKCU "${UNINSTALL_KEY}" "DisplayName" "Zerospace"
   WriteRegStr HKCU "${UNINSTALL_KEY}" "DisplayVersion" "${VERSION}"
-  WriteRegStr HKCU "${UNINSTALL_KEY}" "Publisher" "Linger"
+  WriteRegStr HKCU "${UNINSTALL_KEY}" "Publisher" "Zerospace"
   WriteRegStr HKCU "${UNINSTALL_KEY}" "DisplayIcon" "$INSTDIR\Linger.exe"
   WriteRegStr HKCU "${UNINSTALL_KEY}" "InstallLocation" "$INSTDIR"
   WriteRegStr HKCU "${UNINSTALL_KEY}" "UninstallString" '"$INSTDIR\Uninstall Linger.exe"'
@@ -231,12 +231,12 @@ Function .onInstFailed
   StrCmp $Updating 1 0 done
   StrCmp $Replacing 1 rerun
   IfFileExists "$INSTDIR\Linger.exe" 0 rerun
-  MessageBox MB_OK|MB_ICONEXCLAMATION "Linger was not updated. It will start again and offer the update again." /SD IDOK
+  MessageBox MB_OK|MB_ICONEXCLAMATION "Zerospace was not updated. It will start again and offer the update again." /SD IDOK
   StrCmp $Relaunch 1 0 done
   Exec '"$INSTDIR\Linger.exe"'
   Goto done
   rerun:
-  MessageBox MB_OK|MB_ICONEXCLAMATION "Linger was not updated and cannot start until it is. Run this setup again to finish the update:$\r$\n$EXEPATH" /SD IDOK
+  MessageBox MB_OK|MB_ICONEXCLAMATION "Zerospace was not updated and cannot start until it is. Run this setup again to finish the update:$\r$\n$EXEPATH" /SD IDOK
   done:
 FunctionEnd
 

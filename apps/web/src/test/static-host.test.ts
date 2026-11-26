@@ -21,8 +21,10 @@ const serveHost = (host: ReturnType<typeof createStaticHost>) =>
     void host(request, response);
   });
 const indexDocument =
-  '<!doctype html><html><body><div id="root">Linger</div></body></html>';
-const productionScript = 'console.log("Linger production asset");'.repeat(80);
+  '<!doctype html><html><body><div id="root">Zerospace</div></body></html>';
+const productionScript = 'console.log("Zerospace production asset");'.repeat(
+  80,
+);
 
 beforeEach(async () => {
   fixtureRoot = await mkdtemp(join(tmpdir(), "linger-static-host-"));

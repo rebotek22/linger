@@ -58,7 +58,7 @@ export const computerSetupMessages = defineMessages("computerSetup", {
   updateAlternativeMac:
     "If you installed {app} from Homebrew or its macOS app, update it there instead.",
   computerUpgradeRequired:
-    "{computer} needs a Linger update. Open <link>Settings › Computers</link>.",
+    "{computer} needs a Zerospace update. Open <link>Settings › Computers</link>.",
   checkingRuntimeTitle: "Checking {app}",
   checkingRuntimeBody:
     "Waiting for {computer} to report {app} status. It updates here on its own.",
@@ -90,12 +90,12 @@ export const computerSetupMessages = defineMessages("computerSetup", {
   connectThisComputer: "Connect this computer",
   lookingForApps: "Looking for Codex and Claude Code on this computer…",
   desktopAuthFailed:
-    "This computer's sign-in expired. Choose Reconnect This Computer in the Linger menu bar menu.",
+    "This computer's sign-in expired. Choose Reconnect This Computer in the Zerospace menu bar menu.",
   desktopIdentityConflict:
-    "This computer is already registered under another Computer entry. Choose Reconnect This Computer in the Linger menu bar menu.",
-  desktopUpgradeRequired: "Update the Linger app to connect this computer.",
+    "This computer is already registered under another Computer entry. Choose Reconnect This Computer in the Zerospace menu bar menu.",
+  desktopUpgradeRequired: "Update the Zerospace app to connect this computer.",
   desktopDisconnected:
-    "The Linger background service is not running. Quit and reopen the app.",
+    "The Zerospace background service is not running. Quit and reopen the app.",
   desktopRuntimeCrashed:
-    "Codex and Claude Code could not be checked because the local runtime stopped. Linger is restarting it.",
+    "Codex and Claude Code could not be checked because the local runtime stopped. Zerospace is restarting it.",
 });

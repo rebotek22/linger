@@ -135,7 +135,7 @@ describe("Room navigation", () => {
       name: "Collapse sidebar",
     }).parentElement;
     expect(header).toContainElement(
-      screen.getByRole("img", { name: "Linger" }),
+      screen.getByRole("img", { name: "Zerospace" }),
     );
     expect(screen.getByTestId("location")).toHaveTextContent(pathname);
     fireEvent.click(screen.getByRole("button", { name: "Collapse sidebar" }));

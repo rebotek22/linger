@@ -269,7 +269,7 @@ describe("EditAgentRuntimeDialog", () => {
     expect(screen.getByRole("button", { name: "Save Runtime" })).toBeDisabled();
   });
 
-  it("reports a Linger Computer upgrade instead of an AI app update when upgrade_required is set", async () => {
+  it("reports a Zerospace Computer upgrade instead of an AI app update when upgrade_required is set", async () => {
     const computer = localComputer("computer-old", "Old Mac", "online", {
       platform: "darwin",
       upgrade_required: true,
@@ -279,7 +279,7 @@ describe("EditAgentRuntimeDialog", () => {
       name: "Settings › Computers",
     });
     expect(link.closest("div")).toHaveTextContent(
-      "Old Mac needs a Linger update.",
+      "Old Mac needs a Zerospace update.",
     );
     expect(screen.getByRole("button", { name: "Save Runtime" })).toBeDisabled();
   });
@@ -817,7 +817,7 @@ describe("EditAgentRuntimeDialog", () => {
       "/t/tenant-northstar/settings/computers",
     );
     expect(link.closest("div")).toHaveTextContent(
-      "Studio Mac needs a Linger update.",
+      "Studio Mac needs a Zerospace update.",
     );
     expect(
       screen.queryByText(

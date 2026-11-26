@@ -643,11 +643,11 @@ describe("LocalModelsPage", () => {
   it.each([
     [
       "/home/ana/.local/share/localmodels/tools/gateway-home",
-      "It loaded, but Agents couldn't be given access to it: the folder /home/ana/.local/share/localmodels/tools/gateway-home belongs to another account. Quit Linger, rename that folder, then open Linger and load the model again.",
+      "It loaded, but Agents couldn't be given access to it: the folder /home/ana/.local/share/localmodels/tools/gateway-home belongs to another account. Quit Zerospace, rename that folder, then open Zerospace and load the model again.",
     ],
     [
       undefined,
-      "It loaded, but Agents couldn't be given access to it: a Linger folder on the computer belongs to another account.",
+      "It loaded, but Agents couldn't be given access to it: a Zerospace folder on the computer belongs to another account.",
     ],
   ])(
     "explains a gateway folder another account owns (path %s)",
@@ -823,7 +823,7 @@ describe("LocalModelsPage", () => {
       pool: "gpu:0",
       state: "idle",
     });
-    // A 16 GB card where Linger's embedding holds 1 GB and other apps 8 GB:
+    // A 16 GB card where Zerospace's embedding holds 1 GB and other apps 8 GB:
     // the model fits the empty card but not what is free now.
     const pool = gpuPool(0, 16, [
       { component: true, gb: 1, id: "embedding", name: "Qwen3 Embedding" },
@@ -1257,7 +1257,7 @@ describe("LocalModelsPage", () => {
     [
       "NOT_REPORTED",
       "lab-118 hasn't reported local models yet",
-      "up-to-date Linger app",
+      "up-to-date Zerospace app",
     ],
   ] as const)(
     "explains a Computer without a model library (%s)",
@@ -4564,7 +4564,7 @@ describe("Featured Inkling 2 Mini spotlight", () => {
     const absentSpotlight = spotlightRegion();
     expect(absentSpotlight).toHaveAttribute("data-in-catalog", "false");
     expect(absentSpotlight).toHaveTextContent(
-      "Not in this computer's catalog yet. Update Linger to get it.",
+      "Not in this computer's catalog yet. Update Zerospace to get it.",
     );
     expect(within(absentSpotlight).queryByRole("article")).toBeNull();
     expect(

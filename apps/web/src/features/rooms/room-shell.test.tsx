@@ -318,7 +318,7 @@ describe("Room shell Account menu", () => {
 
 describe("Room shell document title", () => {
   it("names the tab after the Space owner's Tenant actor", async () => {
-    document.title = "Linger";
+    document.title = "Zerospace";
     await renderAccountShell();
 
     await waitFor(() => expect(document.title).toBe("Jenny Bin's space"));

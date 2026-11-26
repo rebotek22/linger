@@ -1,4 +1,4 @@
-"""Export and synchronize the approved Linger identity (Pillow and CairoSVG)."""
+"""Export and synchronize the Zerospace identity (Pillow and CairoSVG)."""
 
 from pathlib import Path
 from io import BytesIO
@@ -16,8 +16,9 @@ import cairosvg
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[2]
-INK = '#141414'
-IVORY = '#f6f5f1'
+INK = '#111111'
+IVORY = '#F6F6F4'
+ACCENT = '#111111'
 NS = 'http://www.w3.org/2000/svg'
 ET.register_namespace('', NS)
 
@@ -46,18 +47,18 @@ def fit(image, size, fraction=1, background=(0, 0, 0, 0)):
     return result
 
 
-source = Image.open(ROOT/'source/linger.png').convert('RGBA')
-mark = (ROOT/'source/linger.svg').read_text()
-dark_word = (ROOT/'source/wordmark.svg').read_text()
-horizontal = dark_word.replace('#F6F5F1', '#141414')
-word_box = list(map(float, ET.fromstring(dark_word).attrib['viewBox'].split()))
+mark = (ROOT/'source/zerospace.svg').read_text()
+source = raster(mark, 1024)
+horizontal = (ROOT/'source/wordmark.svg').read_text()
+dark_word = (ROOT/'source/wordmark-dark.svg').read_text()
+word_box = list(map(float, ET.fromstring(horizontal).attrib['viewBox'].split()))
 horizontal_width = round(word_box[2] * 72 / word_box[3])
 for name, svg in [('logo-mark', mark), ('logo-wordmark', horizontal), ('logo-horizontal', horizontal), ('logo-horizontal-dark', dark_word)]:
     write(name+'.svg', svg)
     save(name+'.png', source if name == 'logo-mark' else raster(svg, 1280))
 save('app-icon.png',source)
 for size in [16,24,32,48,64,128,256,512,1024]:
-    save(f'linux/{size}x{size}/linger.png',fit(source,size))
+    save(f'linux/{size}x{size}/zerospace.png',fit(source,size))
 for size in [16,32,48,64]:
     save(f'web/favicon-{size}.png',fit(source,size))
 save('web/favicon.png',fit(source,512))
@@ -68,22 +69,24 @@ for size in [192,512]:
     # The entire tile fits inside the maskable icon's central safe circle.
     save(f'web/icon-maskable-{size}.png',fit(source,size,0.56,INK))
 (ROOT/'windows').mkdir(exist_ok=True)
-fit(source,256).save(ROOT/'windows/linger.ico',sizes=[(s,s) for s in [16,24,32,48,64,128,256]])
+fit(source,256).save(ROOT/'windows/zerospace.ico',sizes=[(s,s) for s in [16,24,32,48,64,128,256]])
 fit(source,64).save(ROOT/'web/favicon.ico',sizes=[(s,s) for s in [16,32,48,64]])
 tile=fit(source,1024,0.875)
-save('macos/linger.png',tile)
-iconset=ROOT/'macos/linger.iconset'
+save('macos/zerospace.png',tile)
+iconset=ROOT/'macos/zerospace.iconset'
 iconset.mkdir(parents=True,exist_ok=True)
 for size in [16,32,128,256,512]:
     for scale in [1,2]:
         suffix='@2x' if scale==2 else ''
         tile.resize((size*scale,size*scale),Image.Resampling.LANCZOS).save(iconset/f'icon_{size}x{size}{suffix}.png')
-tile.save(ROOT/'macos/linger.icns',format='ICNS')
-# Template artwork contains only the L and dot, never the dark app tile.
+tile.save(ROOT/'macos/zerospace.icns',format='ICNS')
+# Template artwork contains only the orbit, satellite and Z, never the tile.
 template_root=ET.fromstring(mark)
 for child in list(template_root):
-    if child.attrib.get('fill','').lower()==INK:
+    if child.attrib.get('id') in ('tile', None):
         template_root.remove(child)
+    elif child.attrib.get('fill','').lower()=='none':
+        child.set('stroke','#000000')
     else:
         child.set('fill','#000000')
 # Remove the app tile's outer padding so the menu-bar glyph remains legible.
@@ -93,7 +96,7 @@ write('tray/template.svg',template)
 for size in [16,32]:
     save(f'tray/mark-{size}.png',raster(template,size,size))
     save(f'tray/tile-{size}.png',fit(source,size))
-manifest={'name':'Linger','short_name':'Linger','icons':[
+manifest={'name':'Zerospace','short_name':'Zerospace','icons':[
     {'src':f'icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any'} for size in [192,512]
 ]+[
     {'src':f'icon-maskable-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'maskable'} for size in [192,512]
@@ -102,7 +105,7 @@ write('web/site.webmanifest',json.dumps(manifest,indent=2)+'\n')
 for name in ['favicon.svg','favicon.png','favicon.ico','apple-touch-icon.png']:
     shutil.copyfile(ROOT/'web'/name,REPO/'apps/web/public'/name)
 resources=REPO/'apps/desktop/resources'
-for src,dst in [('app-icon.png','icon.png'),('macos/linger.icns','linger.icns'),('windows/linger.ico','linger.ico')]:
+for src,dst in [('app-icon.png','icon.png'),('macos/zerospace.icns','zerospace.icns'),('windows/zerospace.ico','zerospace.ico')]:
     shutil.copyfile(ROOT/src,resources/dst)
 raster(horizontal,horizontal_width,72).save(resources/'logo-horizontal.png')
 for size in [16,32]:
@@ -127,8 +130,8 @@ lockup_width = 44 * word_box[2] / word_box[3]
 lockup.attrib.update(x=f'{(640-lockup_width)/2:.2f}', y='50', width=f'{lockup_width:.2f}', height='44')
 background.append(lockup)
 for i, x in enumerate(range(262, 372, 11)):
-    ET.SubElement(background, f'{{{NS}}}circle', cx=str(x), cy='196', r='2', fill='#FDA946', opacity=f'{0.3+0.07*i:.2f}')
-ET.SubElement(background, f'{{{NS}}}path', d='M372 186 382 196 372 206', fill='none', stroke='#FDA946',
+    ET.SubElement(background, f'{{{NS}}}circle', cx=str(x), cy='196', r='2', fill=ACCENT, opacity=f'{0.3+0.07*i:.2f}')
+ET.SubElement(background, f'{{{NS}}}path', d='M372 186 382 196 372 206', fill='none', stroke=ACCENT,
               **{'stroke-width': '3', 'stroke-linecap': 'round', 'stroke-linejoin': 'round'})
 background_svg = ET.tostring(background, encoding='unicode')
 # A 72 dpi and a 144 dpi frame, so Finder shows the sharp one on Retina displays.

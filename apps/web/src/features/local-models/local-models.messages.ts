@@ -112,7 +112,7 @@ export const localModelsMessages = defineMessages("localModels", {
   featuredReadAnnouncement: "Read announcement",
   featuredHuggingFace: "Hugging Face",
   featuredNotInCatalog:
-    "Not in this computer's catalog yet. Update Linger to get it.",
+    "Not in this computer's catalog yet. Update Zerospace to get it.",
   recommended: "Recommended",
   runsSlower: "runs slower",
   loadedMemoryHybrid: "{vram} VRAM + {ram} RAM",
@@ -345,7 +345,7 @@ export const localModelsMessages = defineMessages("localModels", {
     "This computer is missing a system runtime library required for local models.",
   refusalModelUnknown: "The computer doesn't have this model anymore.",
   refusalServiceUnavailable:
-    "Linger couldn't reach the computer right now. Try again.",
+    "Zerospace couldn't reach the computer right now. Try again.",
   refusalToolsUnavailable:
     "The local model tools on this computer aren't working.",
   refusalComputerNotFound:
@@ -379,9 +379,9 @@ export const localModelsMessages = defineMessages("localModels", {
     "A required system runtime library is missing on this computer.",
   errorUnknownError: "Something went wrong on this computer. Try again.",
   errorGatewayHomeNotPrivate:
-    "It loaded, but Agents couldn't be given access to it: a Linger folder on the computer belongs to another account.",
+    "It loaded, but Agents couldn't be given access to it: a Zerospace folder on the computer belongs to another account.",
   errorGatewayHomeNotPrivatePath:
-    "It loaded, but Agents couldn't be given access to it: the folder {path} belongs to another account. Quit Linger, rename that folder, then open Linger and load the model again.",
+    "It loaded, but Agents couldn't be given access to it: the folder {path} belongs to another account. Quit Zerospace, rename that folder, then open Zerospace and load the model again.",
   shortCancelled: "loading stopped",
   shortChecksumMismatch: "files damaged",
   shortDiskInsufficient: "not enough disk",
@@ -486,7 +486,7 @@ export const localModelsMessages = defineMessages("localModels", {
   driverDialogInstalling:
     "Installing NVIDIA driver {version}… Your screen may blink briefly.",
   driverDialogRebootRequired:
-    "NVIDIA driver {version} installed. Restart Windows to finish — when you reopen Linger, your GPU will be rechecked automatically.",
+    "NVIDIA driver {version} installed. Restart Windows to finish — when you reopen Zerospace, your GPU will be rechecked automatically.",
   driverDialogInstallComplete:
     "NVIDIA driver {version} installed. Rechecking your GPU now…",
   driverDialogErrorUnsupportedGpu:
@@ -506,7 +506,7 @@ export const localModelsMessages = defineMessages("localModels", {
   driverResumeBannerRegion: "NVIDIA driver update status",
   driverResumeRebootTitle: "Restart Windows to finish the NVIDIA driver update",
   driverResumeRebootBody:
-    "NVIDIA driver {version} is installed. Restart Windows, then reopen Linger to unlock local models.",
+    "NVIDIA driver {version} is installed. Restart Windows, then reopen Zerospace to unlock local models.",
   driverResumeReadyTitle: "NVIDIA driver {version} is ready",
   driverResumeReadyBody:
     "Your local models have been rechecked with the updated driver.",
@@ -517,7 +517,7 @@ export const localModelsMessages = defineMessages("localModels", {
   driverDialogOpenNvidiaApp: "Open NVIDIA App",
   driverDialogOpenGfe: "Open GeForce Experience",
   driverDialogNvidiaAppSteps:
-    "In {app}, open Drivers, download the latest driver, and choose Express Installation. Linger checks again when you return.",
+    "In {app}, open Drivers, download the latest driver, and choose Express Installation. Zerospace checks again when you return.",
   driverDialogDownloadOfficial: "Download from NVIDIA",
   driverDialogWindowsManualHint:
     "Choose your GPU on NVIDIA's download page, install the latest Game Ready or Studio driver, then return here.",
@@ -571,7 +571,7 @@ export const localModelsMessages = defineMessages("localModels", {
   debugBannerTinyTitle: "Debug mode active (tiny)",
   debugBannerSimulateTitle: "Debug mode active (simulate)",
   debugBannerEnvBody:
-    "LOCALMODELS_DEBUG is overriding the catalog. Unset it and restart Linger.",
+    "LOCALMODELS_DEBUG is overriding the catalog. Unset it and restart Zerospace.",
   debugBannerConfigBody:
     "A debug config ({path}) is overriding the catalog. Run localmodels debug off or delete it.",
   debugBannerConfigBodyHidden:
@@ -580,13 +580,13 @@ export const localModelsMessages = defineMessages("localModels", {
   // A Computer that reports no model library.
   libraryNotReportedTitle: "{computer} hasn't reported local models yet",
   libraryNotReportedBody:
-    "It reports them once it connects with an up-to-date Linger app.",
+    "It reports them once it connects with an up-to-date Zerospace app.",
   libraryToolFailedTitle: "Couldn't read the local models on {computer}",
   libraryToolFailedBody:
     "The local model tools on this computer didn't answer. Check that they're installed and working, then open this page again.",
   libraryToolNotInstalledTitle: "Local models aren't set up on {computer}",
   libraryToolNotInstalledBody:
-    "Run Quick Install in the Linger desktop app on that computer to add them.",
+    "Run Quick Install in the Zerospace desktop app on that computer to add them.",
 
   capabilityCoding: "Coding",
   capabilityMultilingual: "Multilingual",
@@ -622,7 +622,7 @@ export const localModelsMessages = defineMessages("localModels", {
   sourceForbidden:
     "Only the person who connected this computer can change its models.",
   sourceUnavailable:
-    "This computer can't switch models. Update Linger on it, then try again.",
+    "This computer can't switch models. Update Zerospace on it, then try again.",
   sourceUnconfirmed:
     "The computer didn't answer in time. It may still be switching; check again in a minute.",
   sourceByokProbeUnconfirmed:

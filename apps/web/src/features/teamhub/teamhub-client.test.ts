@@ -189,7 +189,7 @@ describe("TeamHubClient", () => {
           workspace_grants: [
             {
               grant_id: "grant-workspace",
-              label: "Linger Workspace",
+              label: "Zerospace Workspace",
               mode: "workspace-write" as const,
             },
           ],

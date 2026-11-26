@@ -69,7 +69,7 @@ def electron_zip(version, cache):
 
 def write_icon(output):
     """The logo's Windows icon (apps/assets/logo/windows), 16 to 256 px."""
-    shutil.copy(os.path.join(DESKTOP, "resources", "linger.ico"), output)
+    shutil.copy(os.path.join(DESKTOP, "resources", "zerospace.ico"), output)
 
 
 KEPT_LOCALES = {"en-US.pak", "zh-CN.pak"}
@@ -98,17 +98,17 @@ def stage_app(version, electron_version, workdir, cache):
     shutil.copytree(dist, os.path.join(app_dir, "dist"),
                     ignore=shutil.ignore_patterns("*.map", "computer", "computer-tools"))
     with open(os.path.join(app_dir, "package.json"), "w") as out:
-        json.dump({"name": "linger-desktop", "productName": "Linger", "version": version,
+        json.dump({"name": "linger-desktop", "productName": "Zerospace", "version": version,
                    "type": "module", "main": "dist/main/index.mjs"}, out, indent=2)
     computer = os.path.join(resources, "computer")
     os.makedirs(computer)
     shutil.copy2(DAEMON, computer)
     computer_tools.copy(resources, "win32-x64")
 
-    write_icon(os.path.join(resources, "linger.ico"))
+    write_icon(os.path.join(resources, "zerospace.ico"))
     os.rename(os.path.join(stage, "electron.exe"), os.path.join(stage, "Linger.exe"))
     shutil.copy(os.path.join(HERE, "resources.mjs"), workdir)
-    wintool(workdir, "node", "resources.mjs", "Linger/Linger.exe", "Linger/resources/linger.ico", version)
+    wintool(workdir, "node", "resources.mjs", "Linger/Linger.exe", "Linger/resources/zerospace.ico", version)
     return stage
 
 

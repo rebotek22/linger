@@ -129,7 +129,7 @@ describe("UpdateDriverDialog", () => {
     fireEvent.click(nvidiaAppButton);
     await waitFor(() => expect(openNvidiaApp).toHaveBeenCalledOnce());
 
-    // Returning focus to Linger triggers an automatic driver recheck.
+    // Returning focus to Zerospace triggers an automatic driver recheck.
     window.dispatchEvent(new Event("focus"));
     expect(onRecheck).toHaveBeenCalledOnce();
 
@@ -321,7 +321,7 @@ describe("UpdateDriverDialog", () => {
     });
     expect(
       await screen.findByText(
-        "NVIDIA driver 621.24 installed. Restart Windows to finish — when you reopen Linger, your GPU will be rechecked automatically.",
+        "NVIDIA driver 621.24 installed. Restart Windows to finish — when you reopen Zerospace, your GPU will be rechecked automatically.",
       ),
     ).toBeVisible();
 

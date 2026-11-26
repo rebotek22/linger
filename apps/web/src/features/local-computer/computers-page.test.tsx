@@ -199,7 +199,7 @@ describe("ComputersPage", () => {
     fireEvent.click(within(detail).getByRole("button", { name: "Access" }));
     expect(
       within(detail).getByRole("region", { name: "Access" }),
-    ).toHaveTextContent("Linger Workspace");
+    ).toHaveTextContent("Zerospace Workspace");
     expect(detail).toHaveTextContent("Agents can edit here");
 
     fireEvent.click(

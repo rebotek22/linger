@@ -175,8 +175,8 @@ describe("Computer permission card", () => {
     ).toHaveLength(1);
     expect(document.querySelector(".card-prompt")).toBeNull();
     expect(screen.queryByText(/Asks you|wants to use/)).not.toBeInTheDocument();
-    expect(screen.getByText("Linger · Screen Recording")).toBeVisible();
-    expect(screen.getByText("Linger · Accessibility")).toBeVisible();
+    expect(screen.getByText("Zerospace · Screen Recording")).toBeVisible();
+    expect(screen.getByText("Zerospace · Accessibility")).toBeVisible();
     fireEvent.click(await screen.findByRole("button", { name: "Request" }));
     // One step runs at a time; the next button returns once it answered.
     const settings = screen.getByRole("button", { name: "Open Settings" });
@@ -241,9 +241,9 @@ describe("Computer permission card", () => {
       ),
     });
     fireEvent.click(
-      await screen.findByRole("button", { name: "Relaunch Linger" }),
+      await screen.findByRole("button", { name: "Relaunch Zerospace" }),
     );
-    expect(screen.getByText("Relaunch Linger to apply")).toBeVisible();
+    expect(screen.getByText("Relaunch Zerospace to apply")).toBeVisible();
     expect(screen.getByText("Granted")).toBeVisible();
     await waitFor(() =>
       expect(requests.at(-1)).toEqual({
@@ -355,7 +355,7 @@ describe("Computer permission card", () => {
     });
     expect(
       await screen.findByText(
-        "Open Linger on that Mac to grant these permissions.",
+        "Open Zerospace on that Mac to grant these permissions.",
       ),
     ).toBeVisible();
     expect(
@@ -379,7 +379,9 @@ describe("Computer permission card", () => {
   it("gives other members no buttons", async () => {
     desktopOn("computer-mac");
     const { requests } = setup({ actorId: "bob" });
-    expect(await screen.findByText("Linger · Screen Recording")).toBeVisible();
+    expect(
+      await screen.findByText("Zerospace · Screen Recording"),
+    ).toBeVisible();
     expect(screen.queryByText(/Waiting for Alice/)).not.toBeInTheDocument();
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(requests).toEqual([]);
@@ -409,7 +411,7 @@ describe("Computer permission card", () => {
       // A granted card marks each row Granted too; the done line is last.
       const line = (await screen.findAllByText(done)).at(-1)!;
       expect(line.closest("p")?.querySelector("svg")).toHaveClass(tone);
-      expect(screen.getByText("Linger · Screen Recording")).toBeVisible();
+      expect(screen.getByText("Zerospace · Screen Recording")).toBeVisible();
       expect(
         screen.getByRole("heading", {
           level: 3,

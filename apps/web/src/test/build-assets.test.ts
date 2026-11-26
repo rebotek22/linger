@@ -141,14 +141,16 @@ async function createBuildFixture({
   await mkdir(join(root, "assets"), { recursive: true });
   await mkdir(join(root, "brand"), { recursive: true });
 
-  const entryBytes = Buffer.from(entry ?? "const room = 'Linger';".repeat(80));
+  const entryBytes = Buffer.from(
+    entry ?? "const room = 'Zerospace';".repeat(80),
+  );
   const runtimeBytes = Buffer.from("const runtime = true;".repeat(40));
   const dynamicBytes = Buffer.from(
     dynamic ?? "const preview = 'lazy';".repeat(40),
   );
   const cssBytes = Buffer.from(".room{display:flex}".repeat(80));
   await Promise.all([
-    writeFile(join(root, "index.html"), "<main>Linger</main>".repeat(40)),
+    writeFile(join(root, "index.html"), "<main>Zerospace</main>".repeat(40)),
     writeFile(join(root, "assets", "entry.js"), entryBytes),
     writeFile(join(root, "assets", "runtime.js"), runtimeBytes),
     writeFile(join(root, "assets", "dynamic.js"), dynamicBytes),

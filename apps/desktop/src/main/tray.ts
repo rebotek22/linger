@@ -93,7 +93,7 @@ export class TrayModule implements Module {
     try {
       if (headless()) throw new Error("No display");
       this.#tray = new Tray(this.#icon());
-      this.#tray.setToolTip("Linger");
+      this.#tray.setToolTip("Zerospace");
       // Windows and Linux open the window on click; macOS shows the menu.
       if (process.platform !== "darwin")
         this.#tray.on("click", () => setup.showApp());

@@ -24,7 +24,7 @@ describe("matchLanguage", () => {
 
 describe("translator", () => {
   it("formats a message in the chosen language", () => {
-    expect(translator("en")(trayMessages.quit)).toBe("Quit Linger");
+    expect(translator("en")(trayMessages.quit)).toBe("Quit Zerospace");
     expect(translator("zh-CN")(trayMessages.quit)).toBe(zhCN.tray.quit);
     expect(
       translator("zh-CN")(trayMessages.downloading, { version: "1.2.0" }),
@@ -36,7 +36,7 @@ describe("translator", () => {
       notInTheCatalog: "Only in English {name}",
     });
     expect(
-      translator("zh-CN")(messages.notInTheCatalog, { name: "Linger" }),
-    ).toBe("Only in English Linger");
+      translator("zh-CN")(messages.notInTheCatalog, { name: "Zerospace" }),
+    ).toBe("Only in English Zerospace");
   });
 });

@@ -291,7 +291,7 @@ describe("VoiceFocusSurface", () => {
         await screen.findByRole("heading", { name: "Recording did not start" }),
       ).toBeVisible();
       expect(screen.getByRole("alert")).toHaveTextContent(
-        "Linger can't use the microphone. Allow Linger in System Settings › Privacy & Security › Microphone, then try again.",
+        "Zerospace can't use the microphone. Allow Zerospace in System Settings › Privacy & Security › Microphone, then try again.",
       );
     } finally {
       delete desktop.lingerDesktop;

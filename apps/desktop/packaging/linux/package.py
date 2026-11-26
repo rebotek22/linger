@@ -73,7 +73,7 @@ def stage_app(version, electron_version, root, cache):
     shutil.copytree(os.path.join(DESKTOP, "dist"), os.path.join(app_dir, "dist"),
                     ignore=shutil.ignore_patterns("*.map", "computer", "computer-tools"), symlinks=True)
     with open(os.path.join(app_dir, "package.json"), "w") as out:
-        json.dump({"name": "linger-desktop", "productName": "Linger", "version": version,
+        json.dump({"name": "linger-desktop", "productName": "Zerospace", "version": version,
                    "type": "module", "main": "dist/main/index.mjs"}, out, indent=2)
     computer = os.path.join(resources, "computer")
     os.makedirs(computer)

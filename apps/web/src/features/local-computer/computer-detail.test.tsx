@@ -205,7 +205,7 @@ it("shows agy update instead of the install script when updating an outdated Ant
   ).not.toBeInTheDocument();
 });
 
-it("tells an older Computer to update Linger instead of offering Antigravity", () => {
+it("tells an older Computer to update Zerospace instead of offering Antigravity", () => {
   const computer: TeamHubLocalComputerPage["items"][number] = {
     computer_id: "desktop",
     display_name: "Desktop Mac",
@@ -230,7 +230,7 @@ it("tells an older Computer to update Linger instead of offering Antigravity", (
     />,
   );
   const apps = screen.getByRole("region", { name: "AI apps" });
-  expect(apps).toHaveTextContent("Needs a newer Linger");
-  // Pi can still be added; Antigravity cannot until Linger is updated.
+  expect(apps).toHaveTextContent("Needs a newer Zerospace");
+  // Pi can still be added; Antigravity cannot until Zerospace is updated.
   expect(screen.getAllByRole("button", { name: "Add" })).toHaveLength(1);
 });

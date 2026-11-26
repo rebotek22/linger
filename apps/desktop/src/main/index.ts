@@ -85,7 +85,7 @@ else if (app.isPackaged) {
     );
   } catch (error) {
     dialog.showErrorBox(
-      "Linger could not start",
+      "Zerospace could not start",
       `Could not move the app data folder to ${userData}: ${error instanceof Error ? error.message : String(error)}`,
     );
     app.exit(1);
@@ -456,7 +456,7 @@ async function main(): Promise<void> {
   } catch (error) {
     log.error("desktop.start_failed", { error: String(error) });
     dialog.showErrorBox(
-      "Linger",
+      "Zerospace",
       language.t(dialogMessages.startFailed, { error: String(error) }),
     );
     app.exit(1);

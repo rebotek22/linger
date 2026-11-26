@@ -77,7 +77,7 @@ export function AuthIllustration() {
               </span>
             )}
           </span>
-          <span className="auth-art-day-name">Linger</span>
+          <span className="auth-art-day-name">Zerospace</span>
         </div>
         <ol className="auth-art-timeline">
           {NUDGES.map((nudge, index) => (

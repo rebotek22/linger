@@ -41,7 +41,7 @@ describe("localRuntimeMessage", () => {
     ).toBe("Studio Mac is offline.");
   });
 
-  it("distinguishes an outdated AI app from a Computer that needs a Linger update", async () => {
+  it("distinguishes an outdated AI app from a Computer that needs a Zerospace update", async () => {
     expect(
       localRuntimeMessage(
         {
@@ -63,7 +63,7 @@ describe("localRuntimeMessage", () => {
         "Studio Mac",
         translate,
       ),
-    ).toBe("Studio Mac needs a Linger update.");
+    ).toBe("Studio Mac needs a Zerospace update.");
 
     await setLanguage("zh-CN");
     expect(

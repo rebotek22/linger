@@ -545,7 +545,7 @@ export function createTeamHubTestSeed(): TeamHubTestSeed {
       workspace_grants: [
         {
           grant_id: "grant-linger-workspace",
-          label: "Linger Workspace",
+          label: "Zerospace Workspace",
           mode: "workspace-write",
         },
       ],
@@ -1449,7 +1449,7 @@ function anotherMeSetupMessages(
       "message-another-me-welcome",
       roomId,
       anotherMe,
-      "Hi jenny, I'm your Another Me — think of me as another you in Linger.",
+      "Hi jenny, I'm your Another Me — think of me as another you in Zerospace.",
       "2026-07-23T09:25:00Z",
     ),
     {

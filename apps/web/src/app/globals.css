@@ -56,7 +56,10 @@
   --color-border: hsl(var(--town-border));
   --color-border-hover: hsl(var(--town-border-hover));
   --color-input: hsl(var(--town-input));
-  --color-ring: hsl(var(--town-primary) / 0.4);
+  --color-ring: hsl(var(--town-brand) / 0.35);
+  --color-live: hsl(var(--town-live));
+  --color-brand: hsl(var(--town-brand));
+  --color-brand-foreground: hsl(var(--town-brand-foreground));
   --color-sidebar: hsl(var(--town-sidebar));
   --color-sidebar-muted: hsl(var(--town-sidebar-muted));
   --color-sun-500: #d95b31;
@@ -476,11 +479,11 @@ a[href][aria-disabled="true"],
 
 .auth-brand-wordmark {
   display: block;
-  width: 8rem;
+  width: 10rem;
   height: auto;
 }
 
-.linger-brand-mark {
+.zerospace-brand-mark {
   display: block;
   width: 3rem;
   height: 3rem;
@@ -508,11 +511,10 @@ a[href][aria-disabled="true"],
 }
 
 .auth-title {
-  font-family: var(--app-font-slab);
-  font-size: 2.75rem;
-  font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
@@ -675,8 +677,8 @@ a[href][aria-disabled="true"],
 }
 
 .auth-art-title {
-  font-size: 3.5em;
-  font-weight: 580;
+  font-size: 3em;
+  font-weight: 500;
   line-height: 1.06;
   letter-spacing: -0.04em;
 }
@@ -687,9 +689,7 @@ a[href][aria-disabled="true"],
 }
 
 .auth-art-title > span + span {
-  font-family: var(--app-font-slab);
-  font-weight: 300;
-  letter-spacing: -0.03em;
+  color: hsl(var(--town-muted-foreground));
   animation-delay: 0.35s;
 }
 
@@ -701,7 +701,16 @@ a[href][aria-disabled="true"],
   animation: auth-art-rise 0.9s var(--ease-town-out) 0.6s both;
 }
 
+/* The page's one moment: the agent's day as a printed note on paper. */
 .auth-art-day {
+  max-width: 26em;
+  padding: 1.75em 2em 2em;
+  border: 1px solid hsl(var(--town-foreground) / 0.08);
+  border-radius: 16px;
+  background: #fffffe;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.04),
+    0 12px 32px -12px rgb(0 0 0 / 0.12);
   animation: auth-art-rise 0.9s var(--ease-town-out) 0.9s both;
 }
 
@@ -709,7 +718,9 @@ a[href][aria-disabled="true"],
   display: flex;
   align-items: center;
   gap: 0.875em;
-  margin-bottom: 1.75em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.25em;
+  border-bottom: 1px solid hsl(var(--town-foreground) / 0.08);
 }
 
 /* The figure sits directly on its colored tile. */
@@ -792,7 +803,8 @@ a[href][aria-disabled="true"],
 }
 
 .auth-art-moment[data-state="now"]::before {
-  background: var(--app-unread);
+  /* The satellite dot from the logo: what Zerospace is on right now. */
+  background: hsl(var(--town-live));
   box-shadow: none;
   transform: scale(1.25);
 }

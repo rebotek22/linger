@@ -125,7 +125,7 @@ export const wikiMessages = defineMessages("wiki", {
     "Wiki update failed — Your Computer was offline.",
   updateFailedSignIn: "Wiki update failed — Runtime sign-in required.",
   updateFailedIncompatible:
-    "Wiki update failed — Runtime incompatible, or its model isn't available to your account. Update your local CLI or Linger, or check its model setting.",
+    "Wiki update failed — Runtime incompatible, or its model isn't available to your account. Update your local CLI or Zerospace, or check its model setting.",
   updateFailedRuntimeUnavailable:
     "Wiki update failed — Local Runtime is unavailable.",
 

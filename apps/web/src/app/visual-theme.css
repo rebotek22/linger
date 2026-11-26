@@ -1,45 +1,52 @@
-/* Town design system: semantic tokens are bare HSL triplets consumed as
-   hsl(var(--town-x) / alpha); every --app-* role below derives from them. */
+/* Zerospace design system: semantic tokens are bare HSL triplets consumed as
+   hsl(var(--town-x) / alpha); every --app-* role below derives from them.
+   Graphite and paper: untinted neutrals and ink, like the black logo tile.
+   The only chrome color is --town-live, the logo's satellite dot, which marks
+   something Zerospace is working on right now. */
 :root {
   color-scheme: light;
-  --town-background: 60 20% 99%;
-  --town-foreground: 60 8% 9.4%;
+  --town-background: 60 9% 98%;
+  --town-foreground: 0 0% 7%;
   --town-card: 0 0% 100%;
   --town-popover: 0 0% 100%;
-  --town-primary: 60 8% 9.4%;
+  --town-primary: 0 0% 7%;
   --town-primary-foreground: 0 0% 100%;
-  --town-secondary: 240 4.8% 95.9%;
-  --town-secondary-foreground: 53 7% 23.7%;
-  --town-muted: 60 16% 95%;
-  --town-muted-foreground: 55 6% 42.5%;
-  --town-accent: 240 4.8% 95.9%;
-  --town-accent-foreground: 60 8% 9.4%;
+  --town-secondary: 60 5% 95%;
+  --town-secondary-foreground: 0 0% 25%;
+  --town-muted: 60 5% 95%;
+  --town-muted-foreground: 0 0% 42%;
+  --town-accent: 60 5% 95%;
+  --town-accent-foreground: 0 0% 7%;
   --town-destructive: 14 89% 41%;
   --town-destructive-foreground: 0 0% 100%;
-  --town-info: 207 92% 42%;
+  --town-info: 212 70% 42%;
   --town-success: 98 48% 35%;
   --town-warning: 37 100% 39%;
-  --town-border: 72 9% 92%;
-  --town-border-hover: 72 9% 85%;
-  --town-border-heavy: 60 8% 9.4%;
-  --town-input: 72 9% 92%;
-  --town-input-hover: 72 9% 85%;
-  --town-sidebar: 75 23% 96.5%;
-  --town-sidebar-foreground: 60 8% 9.4%;
-  --town-sidebar-muted: 70 15% 92%;
-  --town-sidebar-border: 240 6% 90%;
-  --town-highlight: 207 95% 40%;
-  --town-button-accent: 208 54% 35%;
+  --town-border: 60 4% 91%;
+  --town-border-hover: 60 3% 84%;
+  --town-border-heavy: 0 0% 7%;
+  --town-input: 60 4% 89%;
+  --town-input-hover: 60 3% 80%;
+  --town-sidebar: 60 6% 96.5%;
+  --town-sidebar-foreground: 0 0% 7%;
+  --town-sidebar-muted: 60 4% 92%;
+  --town-sidebar-border: 60 4% 90%;
+  --town-highlight: 212 75% 36%;
+  --town-button-accent: 0 0% 7%;
   --town-comment-amber: 45 93% 47%;
-  --town-send: 221 97% 53%;
-  --town-send-hover: 225 84% 49%;
-  --town-shadow-outline: 0 0 0 1px #1a191a0d;
-  --town-shadow-sm: 0 0 0 1px #1a191a0d, 0 1px 3px #0000000a, 0 0 1px #0000000a;
-  --town-shadow-md: 0 0 0 1px #1a191a0d, 0 2px 8px #0000000f, 0 0 2px #0000000a;
+  --town-send: 0 0% 7%;
+  --town-send-hover: 0 0% 20%;
+  --town-shadow-outline: 0 0 0 1px #1111110f;
+  --town-shadow-sm: 0 0 0 1px #1111110f, 0 1px 3px #0000000a, 0 0 1px #0000000a;
+  --town-shadow-md: 0 0 0 1px #1111110f, 0 2px 8px #0000000f, 0 0 2px #0000000a;
   --town-shadow-lg:
-    0 0 0 1px #1a191a0d, 0 4px 16px #00000012, 0 2px 6px -2px #0000000a;
+    0 0 0 1px #1111110f, 0 4px 16px #00000012, 0 2px 6px -2px #0000000a;
   --town-shadow-xl:
-    0 0 0 1px #1a191a0d, 0 8px 32px #00000014, 0 2px 8px -4px #0000000a;
+    0 0 0 1px #1111110f, 0 8px 32px #00000014, 0 2px 8px -4px #0000000a;
+  /* Brand roles are ink, like the logo tile; --town-live is the satellite. */
+  --town-brand: 0 0% 7%;
+  --town-brand-foreground: 0 0% 100%;
+  --town-live: 145 54% 40%;
   --town-shadow-button:
     0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
@@ -66,20 +73,21 @@
   --app-action-hover: hsl(var(--town-primary) / 0.9);
   --app-action-active: hsl(var(--town-border-heavy));
   --app-action-foreground: hsl(var(--town-primary-foreground));
-  /* Town has no brand accent: the old accent role reads as the primary ink. */
-  --app-accent: hsl(var(--town-primary));
-  --app-accent-hover: hsl(var(--town-primary) / 0.9);
+  /* Accent roles are ink: the chrome has no hue of its own. */
+  --app-accent: hsl(var(--town-brand));
+  --app-accent-hover: hsl(var(--town-send-hover));
   --app-accent-surface: hsl(var(--town-muted));
   --app-accent-border: hsl(var(--town-border-hover));
   --app-accent-text: hsl(var(--town-foreground));
+  --app-live: hsl(var(--town-live));
   --app-unread: hsl(var(--town-destructive));
   --app-unread-foreground: hsl(var(--town-destructive-foreground));
   --app-info: hsl(var(--town-info));
   --app-info-hover: hsl(var(--town-highlight));
   --app-link: hsl(var(--town-info));
   --app-comment-highlight: hsl(var(--town-comment-amber));
-  --app-focus: hsl(var(--town-foreground));
-  --app-ring: hsl(var(--town-primary) / 0.4);
+  --app-focus: hsl(var(--town-brand));
+  --app-ring: hsl(var(--town-brand) / 0.35);
   --app-danger: hsl(var(--town-destructive));
   /* The Voice Mode island: a white call bar with soft round controls. */
   --app-voice-island: hsl(var(--town-card));
@@ -96,7 +104,7 @@
   --app-field-hover: hsl(var(--town-card));
   --app-field-border: hsl(var(--town-input));
   --app-field-border-hover: hsl(var(--town-input-hover));
-  --app-field-focus: hsl(var(--town-foreground));
+  --app-field-focus: hsl(var(--town-brand));
   --app-field-disabled-surface: hsl(var(--town-muted));
   --app-field-disabled-text: hsl(var(--town-muted-foreground));
   --app-status-neutral-surface: hsl(var(--town-muted));
@@ -123,7 +131,7 @@
   --app-column-surface: hsl(var(--town-muted));
   --app-column-border: hsl(var(--town-border));
   --app-progress-track: hsl(var(--town-border));
-  --app-progress-fill: hsl(var(--town-primary));
+  --app-progress-fill: hsl(var(--town-brand));
   --app-floating-shadow-color: rgba(0, 0, 0, 0.06);
   --app-modal-shadow-color: rgba(0, 0, 0, 0.07);
   --app-nav-selected-shadow-color: hsl(var(--town-border));
@@ -133,8 +141,8 @@
   --composer-surface: hsl(var(--town-card));
   --composer-action-surface: hsl(var(--town-secondary));
   --composer-action-hover: hsl(var(--town-primary) / 0.09);
-  --composer-send: hsl(var(--town-primary));
-  --composer-send-hover: hsl(var(--town-primary) / 0.9);
+  --composer-send: hsl(var(--town-brand));
+  --composer-send-hover: hsl(var(--town-send-hover));
   /* File-type tints come from the Town nature palette. */
   --composer-attachment-pdf-surface: color-mix(
     in srgb,

@@ -53,7 +53,7 @@ describe("renderTrayIcon", () => {
     }
   });
 
-  it("keeps template images monochrome and draws the L and dot", () => {
+  it("keeps template images monochrome and draws the orbit and Z", () => {
     const rows = pixels(
       renderTrayIcon({
         tone: "online",
@@ -70,13 +70,14 @@ describe("renderTrayIcon", () => {
         if (rows[i + 3]! > 128) opaque += 1;
       }
     expect(opaque).toBeGreaterThan(40);
-    // The app tile must not become a solid square in the macOS menu bar.
-    expect(rows[2 * 65 + 1 + 7 * 4 + 3]).toBe(0);
-    expect(rows[8 * 65 + 1 + 5 * 4 + 3]).toBeGreaterThan(128);
-    expect(rows[7 * 65 + 1 + 9 * 4 + 3]).toBeGreaterThan(128);
+    // The app tile must not become a solid square in the macOS menu bar:
+    // the gap between the orbit and the Z's top bar stays clear.
+    expect(rows[3 * 65 + 1 + 6 * 4 + 3]).toBe(0);
+    expect(rows[5 * 65 + 1 + 6 * 4 + 3]).toBeGreaterThan(128);
+    expect(rows[8 * 65 + 1 + 7 * 4 + 3]).toBeGreaterThan(128);
   });
 
-  it("shows the dark logo tile on other platforms", () => {
+  it("shows the logo tile on other platforms", () => {
     const tile = decodePng(resource("tile-32.png"), 32);
     const rows = pixels(
       renderTrayIcon({

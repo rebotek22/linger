@@ -1,4 +1,4 @@
-/** The Linger L and amber dot on the approved dark app tile. */
+/** The Zerospace orbit-and-Z mark on its violet app tile. */
 export function BrandMark({
   className = "",
   decorative = false,
@@ -8,9 +8,9 @@ export function BrandMark({
 }) {
   return (
     <img
-      alt={decorative ? "" : "Linger"}
+      alt={decorative ? "" : "Zerospace"}
       aria-hidden={decorative || undefined}
-      className={`linger-brand-mark ${className}`}
+      className={`zerospace-brand-mark ${className}`}
       draggable={false}
       src="/favicon.svg"
     />

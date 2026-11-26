@@ -131,7 +131,7 @@ export const runtimeStatusMessages = defineMessages("runtimeStatus", {
   // Why a Run failed, by the failure code the Computer or TeamHub reports.
   failureSessionNotFound: "Couldn't restore its earlier session.",
   failureProtocolIncompatible:
-    "Its AI app version isn't supported. Update the app or Linger.",
+    "Its AI app version isn't supported. Update the app or Zerospace.",
   failureAuthenticationRequired: "Its AI app needs you to sign in again.",
   failureNetworkError: "Couldn't reach the model service.",
   failureRateLimited: "Hit the model's rate limit or quota.",

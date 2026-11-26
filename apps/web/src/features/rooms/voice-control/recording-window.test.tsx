@@ -896,7 +896,7 @@ describe("Recording window", () => {
     const floating = within(desktop.frame.contentDocument!.body);
     await act(async () => {
       fireEvent.click(
-        floating.getByRole("button", { name: "Return recording to Linger" }),
+        floating.getByRole("button", { name: "Return recording to Zerospace" }),
       );
     });
     expect(desktop.showMain).toHaveBeenCalledOnce();
@@ -906,7 +906,7 @@ describe("Recording window", () => {
       await screen.findByRole("region", { name: "Recording window" }),
     ).toBeVisible();
     expect(
-      screen.queryByRole("button", { name: "Return recording to Linger" }),
+      screen.queryByRole("button", { name: "Return recording to Zerospace" }),
     ).toBeNull();
     expect(voice.leavePage).not.toHaveBeenCalled();
 

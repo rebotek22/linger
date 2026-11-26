@@ -163,11 +163,11 @@ export const connectorMessages = defineMessages("connectors", {
   feishuComputerOfflineTitle:
     "The Computer that runs your Another Me is offline",
   feishuComputerOfflineStepOpen:
-    "On that Computer, open Linger and make sure you are signed in.",
+    "On that Computer, open Zerospace and make sure you are signed in.",
   feishuComputerUnavailableTitle:
     "The Computer that runs your Another Me could not check lark-cli",
   feishuComputerUnavailableStepCheck:
-    "Make sure Linger on that Computer is online and up to date.",
+    "Make sure Zerospace on that Computer is online and up to date.",
 
   feishuCheckAgain: "Check again",
 

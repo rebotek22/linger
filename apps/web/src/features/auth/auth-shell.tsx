@@ -15,12 +15,12 @@ export function AuthShell({
     <main className="auth-page min-h-dvh text-foreground">
       <header className="auth-brand">
         <img
-          alt="Linger"
+          alt="Zerospace"
           className="auth-brand-wordmark"
           draggable={false}
-          height={386}
-          src="/linger-wordmark.svg"
-          width={1225}
+          height={256}
+          src="/zerospace-wordmark.svg"
+          width={1298}
         />
       </header>
 
@@ -40,7 +40,7 @@ export function AuthShell({
         </section>
       </div>
 
-      <footer className="auth-footer">&copy; 2026 Linger</footer>
+      <footer className="auth-footer">&copy; 2026 Zerospace</footer>
     </main>
   );
 }

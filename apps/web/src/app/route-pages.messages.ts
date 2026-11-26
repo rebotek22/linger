@@ -12,6 +12,6 @@ export const routePagesMessages = defineMessages("routePages", {
   pageRestrictedTitle: "This page is not available to you",
   restrictedBody: "You may not have access, or it was deleted.",
   loadFailedBody: "Check your connection and try again.",
-  teamHubUnavailableTitle: "Can't reach Linger",
+  teamHubUnavailableTitle: "Can't reach Zerospace",
   viewLoadFailedTitle: "Couldn't load this page",
 });

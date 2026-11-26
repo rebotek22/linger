@@ -744,7 +744,7 @@ describe("LocalServerModule", () => {
     await f.host.start();
     expect(f.module.status().available).toBe(true);
     await expect(f.module.begin()).rejects.toThrow(
-      "Linger needs macOS 14.0 or later. This Mac runs macOS 13.2. Update macOS in System Settings > General > Software Update, then try again.",
+      "Zerospace needs macOS 14.0 or later. This Mac runs macOS 13.2. Update macOS in System Settings > General > Software Update, then try again.",
     );
     expect(f.module.status()).toMatchObject({
       phase: "failed",
@@ -2648,7 +2648,7 @@ describe("LocalServerModule", () => {
     await f.host.stop("quit");
   });
 
-  it("installs LINGER_CHECKOUT only when it is a Linger source", async () => {
+  it("installs LINGER_CHECKOUT only when it is a Zerospace source", async () => {
     const f = fixture(withCheckout, {}, (home) =>
       mkdirSync(path.join(home, "src"), { recursive: true }),
     );
@@ -3588,7 +3588,7 @@ describe("LocalServerModule install location", () => {
         expect(f.module.status().location).toEqual({
           path: f.home,
           custom: false,
-          error: "Linger can't write to this folder. Choose another one.",
+          error: "Zerospace can't write to this folder. Choose another one.",
         });
       } finally {
         chmodSync(locked, 0o700);
@@ -3597,7 +3597,7 @@ describe("LocalServerModule install location", () => {
     },
   );
 
-  it("installs into an empty folder or one that holds Linger", async () => {
+  it("installs into an empty folder or one that holds Zerospace", async () => {
     const root = tempDirectory();
     expect(await installLocation(root)).toBe(root);
     writeFileSync(path.join(root, ".DS_Store"), "");
@@ -4302,7 +4302,7 @@ describe("LocalServerModule after a restart", () => {
       expect(f.module.status().phase).toBe("failed"),
     );
     expect(f.showStartFailed).toHaveBeenCalledWith(
-      "The local model's Pi can't load extensions, which every Linger run needs. The upstream tool could not verify the local stack binding. Try Again to apply the approved local model plan again, or Set Up Again to review a new plan or choose another AI runtime.",
+      "The local model's Pi can't load extensions, which every Zerospace run needs. The upstream tool could not verify the local stack binding. Try Again to apply the approved local model plan again, or Set Up Again to review a new plan or choose another AI runtime.",
     );
     await f.host.stop("quit");
   });
@@ -5138,7 +5138,7 @@ describe("proveLocalServer", () => {
     ).rejects.toMatchObject({
       name: "LocalServerUnverifiedError",
       reason,
-      message: "Linger on this computer is not responding.",
+      message: "Zerospace on this computer is not responding.",
     });
   });
 
@@ -5261,25 +5261,25 @@ describe("signInFailure", () => {
       cause: Object.assign(new Error("connect"), { code: "ECONNREFUSED" }),
     });
     expect(signInFailure(refused)).toBe(
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     );
     expect(
       signInFailure(
         new DOMException("The operation timed out", "TimeoutError"),
       ),
-    ).toBe("Linger on this computer is not responding.");
+    ).toBe("Zerospace on this computer is not responding.");
     expect(signInFailure(new DOMException("aborted", "AbortError"))).toBe(
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     );
     expect(signInFailure(new LocalServerUnverifiedError("wrong proof"))).toBe(
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     );
     // A message that merely mentions 401 is not a rejected password.
-    expect(signInFailure(new Error("Signing in to Linger failed (401)"))).toBe(
-      "Signing in to Linger failed (401)",
-    );
+    expect(
+      signInFailure(new Error("Signing in to Zerospace failed (401)")),
+    ).toBe("Signing in to Zerospace failed (401)");
     expect(signInFailure(new SignInRejectedError(500))).toBe(
-      "Signing in to Linger failed (500)",
+      "Signing in to Zerospace failed (500)",
     );
   });
 });
@@ -5313,7 +5313,7 @@ describe("anotherMeMissing", () => {
     [null, "could not read this computer's status"],
     [undefined, "does not list this computer"],
     [{ ...online, status: "offline" }, "computer-daemon.log"],
-    [{ ...online, upgrade_required: true }, "Update Linger"],
+    [{ ...online, upgrade_required: true }, "Update Zerospace"],
     [{ ...online, workspace_grants: [{ mode: "read-only" }] }, "no folder"],
     [
       {
@@ -5511,7 +5511,7 @@ describe("LocalServerModule owner account", () => {
     );
     expect(await f.module.servesWindow()).toBe(false);
     await expect(f.module.signInWithAccount()).rejects.toThrow(
-      "This window is not showing the Linger on this computer.",
+      "This window is not showing the Zerospace on this computer.",
     );
     expect(f.signIn).not.toHaveBeenCalled();
     await f.host.stop("quit");
@@ -5524,11 +5524,11 @@ describe("LocalServerModule owner account", () => {
     ],
     [
       new TypeError("fetch failed"),
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     ],
     [
       new LocalServerUnverifiedError("wrong proof"),
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     ],
   ])("says what to do when signing in fails (%s)", async (error, message) => {
     const f = fixture({}, enrolled, installed(OWNER));
@@ -5575,7 +5575,7 @@ describe("LocalServerModule owner account", () => {
       {
         serverIdentity: async () => {
           throw new Error(
-            "Linger on this computer has no server identity yet.",
+            "Zerospace on this computer has no server identity yet.",
           );
         },
       },
@@ -5586,7 +5586,7 @@ describe("LocalServerModule owner account", () => {
     await waitForInstaller(() => expect(f.module.status().phase).toBe("ready"));
     expect(await f.module.servesWindow()).toBe(false);
     await expect(f.module.signInWithAccount()).rejects.toThrow(
-      "Linger on this computer is not responding.",
+      "Zerospace on this computer is not responding.",
     );
     expect(f.signIn).not.toHaveBeenCalled();
     await f.host.stop("quit");
@@ -5601,18 +5601,18 @@ describe("LocalServerModule owner account", () => {
     await f.host.start();
     expect(await f.module.servesWindow()).toBe(false);
     await expect(f.module.signInWithAccount()).rejects.toThrow(
-      "This window is not showing the Linger on this computer.",
+      "This window is not showing the Zerospace on this computer.",
     );
     expect(f.signIn).not.toHaveBeenCalled();
     await f.host.stop("quit");
   });
 
-  it("does not offer it before Linger is installed here", async () => {
+  it("does not offer it before Zerospace is installed here", async () => {
     const f = fixture({}, enrolled);
     await f.host.start();
     expect(await f.module.servesWindow()).toBe(false);
     await expect(f.module.account()).rejects.toThrow(
-      "Linger is not installed on this computer.",
+      "Zerospace is not installed on this computer.",
     );
     await f.host.stop("quit");
   });
@@ -5684,7 +5684,7 @@ describe("legacyMigrationResult", () => {
     const own = [
       {
         instance: LOCAL_INSTANCE,
-        reason: "Another Linger installer is using it.",
+        reason: "Another Zerospace installer is using it.",
       },
     ];
     expect(
@@ -5695,7 +5695,7 @@ describe("legacyMigrationResult", () => {
     ).toEqual({
       skipped: own,
       failure:
-        "Linger could not convert this computer's installation from the earlier Simplex app. Another Linger installer is using it.",
+        "Zerospace could not convert this computer's installation from the earlier Simplex app. Another Zerospace installer is using it.",
     });
   });
 

@@ -1,0 +1,6 @@
+{
+  "name": "Zerospace",
+  "avoid": ["Linger"],
+  "domains": ["heylinger.com"],
+  "colors": ["#FDA946", "#F6F5F1"]
+}

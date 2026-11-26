@@ -50,7 +50,7 @@ export const createAgentMessages = defineMessages("createAgent", {
   creatingTitle: "Bringing your Agent to life",
   creatingDescription: "Setting up everything for your first conversation.",
   openingTitle: "Your Agent is ready",
-  openingDescription: "Opening your conversation. Say hello!",
+  openingDescription: "Opening your conversation",
   accountUnconfirmed: "Your account could not be confirmed. Try again.",
   creationFailed: "Agent creation failed.",
   notCreatedTitle: "Agent could not be created",

@@ -11,8 +11,8 @@ export const recordingMessages = defineMessages("recording", {
   open: "Open recording",
   float: "Float recording window",
   floatHint: "Float over other tabs and apps",
-  returnToLinger: "Return recording to Linger",
-  returnHint: "Back to Linger; recording continues",
+  returnToLinger: "Return recording to Zerospace",
+  returnHint: "Back to Zerospace; recording continues",
 
   // The row with the live duration and the controls.
   surface: "Hardware voice focus",
@@ -135,7 +135,7 @@ export const recordingMessages = defineMessages("recording", {
   microphoneBusy: "The microphone is in use by another application.",
   microphoneDenied: "Microphone permission was denied",
   microphoneBlockedOnMac:
-    "Linger can't use the microphone. Allow Linger in System Settings › Privacy & Security › Microphone, then try again.",
+    "Zerospace can't use the microphone. Allow Zerospace in System Settings › Privacy & Security › Microphone, then try again.",
   microphoneInterrupted: "Microphone connection was interrupted",
   microphoneUnavailable: "Microphone access is unavailable",
   noAudioInput: "No audio input device is available",

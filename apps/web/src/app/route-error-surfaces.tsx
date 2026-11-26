@@ -119,7 +119,7 @@ function ApplicationRouteErrorSurface({ tenantId }: { tenantId?: string }) {
       <div className="app-work-surface flex min-w-0 flex-1 flex-col">
         <header className="flex h-(--app-header-height) shrink-0 items-center border-b border-border/60 bg-app-sidebar px-4 md:hidden">
           <BrandMark className="size-8" />
-          <span className="ml-3 text-sm font-medium">Linger</span>
+          <span className="ml-3 text-sm font-medium">Zerospace</span>
         </header>
         <main
           aria-label={t(routePagesMessages.loadingError)}

@@ -4,12 +4,12 @@ import type { StatusTone } from "./status.js";
 
 // Draws the tray icon for a status from the Linger logo at 16 and 32 px,
 // so there are no binary assets per state. macOS gets a monochrome template
-// image of the L and dot with a status badge cut into the corner. Other
+// image of the orbit-and-Z mark with a status badge cut into the corner. Other
 // platforms get the logo on its dark tile, which reads on both light and dark
 // panels, with a coloured status dot.
 
 export interface TrayArtwork {
-  // The black L and dot on transparency, exported for template rendering.
+  // The black orbit and Z on transparency, exported for template rendering.
   readonly mark: Buffer;
   // The logo on its dark tile (apps/assets/logo/web favicon), as a PNG.
   readonly tile: Buffer;

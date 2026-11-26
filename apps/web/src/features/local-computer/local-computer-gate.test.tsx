@@ -46,7 +46,7 @@ const newMac: LocalComputer = {
   workspace_grants: [
     {
       grant_id: "grant-managed",
-      label: "Linger managed workspace",
+      label: "Zerospace managed workspace",
       mode: "workspace-write",
     },
   ],

@@ -404,7 +404,7 @@ describe("Voice Mode microphone refusal", () => {
     expect(await refusedState()).toMatchObject({
       status: "error",
       error:
-        "Linger can't use the microphone. Allow Linger in System Settings › Privacy & Security › Microphone, then try again.",
+        "Zerospace can't use the microphone. Allow Zerospace in System Settings › Privacy & Security › Microphone, then try again.",
     });
   });
 });

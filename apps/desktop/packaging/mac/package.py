@@ -145,7 +145,7 @@ def update_plist(path, **values):
 
 def write_icon(resources):
     """electron.icns is the logo's macOS icon (apps/assets/logo/macos)."""
-    shutil.copy(os.path.join(DESKTOP, "resources", "linger.icns"), os.path.join(resources, "electron.icns"))
+    shutil.copy(os.path.join(DESKTOP, "resources", "zerospace.icns"), os.path.join(resources, "electron.icns"))
 
 
 # With the grammatical-gender variants Chromium picks from the user's settings.
@@ -187,7 +187,7 @@ def stage_app(arch, version, electron_version, workdir, cache):
 
     shutil.copytree(dist, os.path.join(app_dir, "dist"), ignore=ignore, symlinks=True)
     with open(os.path.join(app_dir, "package.json"), "w") as out:
-        json.dump({"name": "linger-desktop", "productName": "Linger", "version": version,
+        json.dump({"name": "linger-desktop", "productName": "Zerospace", "version": version,
                    "type": "module", "main": "dist/main/index.mjs"}, out, indent=2)
     computer = os.path.join(resources, "computer")
     os.makedirs(computer)
@@ -196,8 +196,8 @@ def stage_app(arch, version, electron_version, workdir, cache):
     write_icon(resources)
 
     os.rename(os.path.join(contents, "MacOS", "Electron"), os.path.join(contents, "MacOS", "Linger"))
-    update_plist(os.path.join(contents, "Info.plist"), CFBundleName="Linger",
-                 CFBundleDisplayName="Linger", CFBundleExecutable="Linger",
+    update_plist(os.path.join(contents, "Info.plist"), CFBundleName="Zerospace",
+                 CFBundleDisplayName="Zerospace", CFBundleExecutable="Linger",
                  CFBundleIdentifier=BUNDLE_ID, CFBundleShortVersionString=version,
                  CFBundleVersion=version, LSMinimumSystemVersion=MINIMUM_MACOS,
                  **PRIVACY_USAGE)

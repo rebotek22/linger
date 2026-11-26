@@ -1,25 +1,14 @@
-<p align="center"><img src="assets/logo-horizontal.svg" width="360" alt="Linger"></p>
+<p align="center"><img src="assets/logo-horizontal.svg" width="360" alt="Zerospace"></p>
 
-<p align="center"><b>Linger is an open-source personal agent with a Claude-class brain running locally on your PC.</b></p>
-
-<p align="center">
-  <b>Open-Source</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b>Local AI</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b>Consumer Macs &amp; PCs</b>
-</p>
+<p align="center"><b>Zerospace is a personal AI agent that runs on your own computer, with local models, your apps and your memory in one workspace.</b></p>
 
 <p align="center">
-  <a href="https://docs.heylinger.com/"><img height="28" alt="Documentation" src="https://img.shields.io/badge/Docs-0975ce?style=for-the-badge"></a>
-  <a href="https://github.com/simplexai-labs/PolyStrata"><img height="28" alt="Powered by PolyStrata" src="https://img.shields.io/badge/Powered%20by-PolyStrata-1a1a16?logo=github&logoColor=white&amp;style=for-the-badge"></a>
-  <a href="https://github.com/Niko1221/Strata"><img height="28" alt="Powered by Strata" src="https://img.shields.io/badge/Powered%20by-Strata-1a1a16?logo=github&logoColor=white&amp;style=for-the-badge"></a>
+  <b>Local AI</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b>Private by default</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b>Consumer Macs &amp; PCs</b>
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/bmgnw6pdZ7"><img height="28" alt="Join our Discord" src="https://img.shields.io/badge/Discord-5865F2?logo=discord&amp;logoColor=white&amp;style=for-the-badge"></a>
-  <a href="https://x.com/HeyLingerAI"><img height="28" alt="Follow on X" src="https://img.shields.io/badge/@HeyLingerAI-000000?logo=x&logoColor=white&amp;style=for-the-badge"></a>
-  <a href="https://www.youtube.com/@HeyLingerAI"><img height="28" alt="YouTube" src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white&amp;style=for-the-badge"></a>
-  <a href="https://www.reddit.com/user/HeyLinger/"><img height="28" alt="Reddit" src="https://img.shields.io/badge/Reddit-FF4500?logo=reddit&logoColor=white&amp;style=for-the-badge"></a>
-</p>
+<p align="center"><sub>Built on <a href="https://github.com/simplexai-labs/linger">Linger</a> by SimplexAI. See <a href="#license-and-attribution">License and attribution</a>.</sub></p>
 
-<p align="center"><a href="assets/linger-story.mp4"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/linger-story-poster.jpg"><img src="assets/linger-story.webp" width="900" alt="Linger in 28.5 seconds: a metal laptop opens, sets up a local model and connects apps. Mail, chats and meetings become shared memory. One request assembles an agent team; an agent uses the browser and waits for approval before sending an email. A timely reminder leads to a calendar booking, then the laptop closes."></picture></a></p>
+<p align="center"><a href="assets/linger-story.mp4"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/linger-story-poster.jpg"><img src="assets/linger-story.webp" width="900" alt="Zerospace in 28.5 seconds: a metal laptop opens, sets up a local model and connects apps. Mail, chats and meetings become shared memory. One request assembles an agent team; an agent uses the browser and waits for approval before sending an email. A timely reminder leads to a calendar booking, then the laptop closes."></picture></a></p>
 
 - **A Claude-class brain, running locally.** A 125B model on a 12 GB GPU, on everyday Macs and PCs.
 - **The Grok Bot experience on your PC.** Zero token fees for local inference.
@@ -91,7 +80,7 @@ Full benchmarks, test conditions, and scoring details: [docs.heylinger.com/hardw
 
 ### Wiki and memory: It remembers your business
 
-<a href="docs/wiki-and-memory.md"><img src="assets/feature-locomo.webp" width="100%" alt="Wiki and memory: 95% on the LoCoMo memory benchmark. LoCoMo accuracy on questions about long conversations, higher is better: Linger 95%, Zep 94.7%, Mem0 92.5%, EverMemOS 92.3%, Hindsight 92%, Backboard 90%, MemOS 88.83%, Memobase 75.78%, Letta 74%, GPT-4o-mini Full Context 72.9%, OpenAI Memory 52.9%"></a>
+<a href="docs/wiki-and-memory.md"><img src="assets/feature-locomo.webp" width="100%" alt="Wiki and memory: 95% on the LoCoMo memory benchmark. LoCoMo accuracy on questions about long conversations, higher is better: Zerospace 95%, Zep 94.7%, Mem0 92.5%, EverMemOS 92.3%, Hindsight 92%, Backboard 90%, MemOS 88.83%, Memobase 75.78%, Letta 74%, GPT-4o-mini Full Context 72.9%, OpenAI Memory 52.9%"></a>
 
 Tell one agent, and every agent knows. Another Me reads back through your inbox, then each night files your mail, chats and meetings into wiki pages that every agent can search. It keeps the information, preferences and decisions that matter across conversations, on your device instead of in a provider's account.
 
@@ -146,14 +135,14 @@ No second time needed. Name the kind and it changes whether you are told; name t
 ### Option 1: the desktop app
 
 For one person on one computer. Choose your platform below. The app
-opens Linger, connects this computer and runs its agents. **Quick Install** on its
-setup screen sets up a Linger server on this computer too.
+opens Zerospace, connects this computer and runs its agents. **Quick Install** on its
+setup screen sets up a Zerospace server on this computer too.
 
-| Platform                                                                                       | Package                                                                                            |
-| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [macOS 14.0 or later, Apple silicon](https://github.com/simplexai-labs/linger/releases/latest) | `Linger-<version>-macos-arm64.dmg`                                                                 |
-| [Windows x64](https://github.com/simplexai-labs/linger/releases/latest)                        | `Linger-<version>-windows-x64-setup.exe`, or `-windows-x64-portable.zip` to run without installing |
-| [Linux x64](https://github.com/simplexai-labs/linger/releases/latest)                          | `Linger-<version>-linux-x64.tar.gz` (glibc 2.35 or newer)                                          |
+| Platform                                                                                  | Package                                                                                            |
+| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [macOS 14.0 or later, Apple silicon](https://github.com/rebotek22/linger/releases/latest) | `Linger-<version>-macos-arm64.dmg`                                                                 |
+| [Windows x64](https://github.com/rebotek22/linger/releases/latest)                        | `Linger-<version>-windows-x64-setup.exe`, or `-windows-x64-portable.zip` to run without installing |
+| [Linux x64](https://github.com/rebotek22/linger/releases/latest)                          | `Linger-<version>-linux-x64.tar.gz` (glibc 2.35 or newer)                                          |
 
 There is no package for Intel Macs; use Docker Compose there. Check each
 download against `SHA256SUMS.txt` from the same release.
@@ -167,7 +156,7 @@ For a server that several computers share, or to build from source. You need
 Docker with Compose and at least 5 GiB of memory for its virtual machine.
 
 ```bash
-git clone https://github.com/simplexai-labs/linger.git
+git clone https://github.com/rebotek22/linger.git
 cd linger
 cp .env.example .env
 docker compose up --build --detach --wait
@@ -191,7 +180,7 @@ to serve other computers on your network and to turn on voice.
 
 #### Local models
 
-The Compose containers run only the Linger server; models and agents run on the
+The Compose containers run only the Zerospace server; models and agents run on the
 computer you connect. Run the guided installer on that computer:
 
 ```bash
@@ -205,7 +194,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install\install.ps1
 ```
 
 It checks your hardware, installs and verifies a local model after your
-approval, and connects `linger-computer` to your Linger server. Pass `--help`
+approval, and connects `linger-computer` to your Zerospace server. Pass `--help`
 for day-2 commands (`--status`, `--up`, `--remove`), or see
 [Bring your own runtime](docs/local-inference.md) for other model setups.
 
@@ -241,7 +230,7 @@ The full documentation lives at **[docs.heylinger.com](https://docs.heylinger.co
   </tr>
 </table>
 
-## Contributors
+## Upstream contributors
 
 <p>
   <a href="https://github.com/simplexai-labs/linger/graphs/contributors">
@@ -249,23 +238,23 @@ The full documentation lives at **[docs.heylinger.com](https://docs.heylinger.co
   </a>
 </p>
 
-New here? Read the [contribution guide](CONTRIBUTING.md) and pick a [good first issue](https://github.com/simplexai-labs/linger/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22).
+New here? Read the [contribution guide](CONTRIBUTING.md) and pick a [good first issue](https://github.com/rebotek22/linger/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22).
 
 ## Community & Contact
 
 Choose the channel that best fits your question:
 
-- [GitHub Issues](https://github.com/simplexai-labs/linger/issues): report reproducible bugs and track engineering work. Read the [contribution guide](CONTRIBUTING.md) before opening one.
+- [GitHub Issues](https://github.com/rebotek22/linger/issues): report reproducible bugs and track engineering work. Read the [contribution guide](CONTRIBUTING.md) before opening one.
 - [Email](mailto:tonyzhang@simplexai.com): write to tonyzhang@simplexai.com for anything that does not fit an issue.
 - [Security policy](SECURITY.md): report a vulnerability privately, never in a public issue.
 
-Star Linger on GitHub to follow along, and choose **Watch → Custom → Releases** to hear about every new release.
+Star Zerospace on GitHub to follow along, and choose **Watch → Custom → Releases** to hear about every new release.
 
 <a href="https://github.com/simplexai-labs/linger"><img src="assets/github-star.webp" width="100%" alt="Starring simplexai-labs/linger on GitHub: the camera zooms in on the Star button, which shows 349; a click turns it into Starred 350"></a>
 
 ## Acknowledgements
 
-Linger is built on these open-source projects:
+Zerospace is built on these open-source projects:
 
 - **[PolyStrata](https://github.com/simplexai-labs/PolyStrata):** Runs local models, keeping the experts a model uses most on your GPU.
 - **[Strata](https://github.com/Niko1221/Strata):** The inference engine PolyStrata is built on. It runs Qwen3.8-Flash-Next.
@@ -280,7 +269,7 @@ Thank you to the open-source community for libraries this powerful and this simp
 
 ## Feature Request
 
-Have an idea? [Open a feature request](https://github.com/simplexai-labs/linger/issues/new?template=feature_request.yml) and describe the problem it would solve.
+Have an idea? [Open a feature request](https://github.com/rebotek22/linger/issues/new?template=feature_request.yml) and describe the problem it would solve.
 
 ## Star History
 
@@ -294,6 +283,10 @@ Have an idea? [Open a feature request](https://github.com/simplexai-labs/linger/
 
 ## License
 
-This repository is licensed under the [Linger Open Source License](LICENSE),
+This repository is licensed under the [Zerospace Open Source License](LICENSE),
 based on Apache 2.0 with additional conditions. [NOTICE](NOTICE) lists
 third-party code and the logos and images that this license does not cover.
+
+## License and attribution
+
+Zerospace is a fork of [Linger](https://github.com/simplexai-labs/linger), © 2026 SIMPLEX AI TECHNOLOGIES PTE. LTD., used under its modified Apache 2.0 license (see [LICENSE](LICENSE) and [NOTICE](NOTICE)). That license restricts offering the software as a hosted service to third parties and changing the logo or copyright in the web frontend without a commercial license from SimplexAI; Zerospace's rebranded frontend is distributed under such a license.

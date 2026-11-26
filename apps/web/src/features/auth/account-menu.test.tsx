@@ -86,7 +86,7 @@ describe("AccountMenu desktop update", () => {
     renderMenu();
     const menu = await openMenu();
     await vi.waitFor(() =>
-      expect(menu).toHaveTextContent("Downloading Linger 0.1.4…"),
+      expect(menu).toHaveTextContent("Downloading Zerospace 0.1.4…"),
     );
     expect(screen.queryByRole("menuitem", { name: "Restart to Update" })).toBe(
       null,
@@ -94,7 +94,7 @@ describe("AccountMenu desktop update", () => {
     expect(screen.queryByTestId("account-update-dot")).toBeNull();
 
     push({ kind: "ready", version: "0.1.4" });
-    expect(menu).toHaveTextContent("Linger 0.1.4 is ready to install");
+    expect(menu).toHaveTextContent("Zerospace 0.1.4 is ready to install");
     expect(screen.getByTestId("account-update-dot")).toBeInTheDocument();
     fireEvent.click(
       screen.getByRole("menuitem", { name: "Restart to Update" }),
@@ -108,7 +108,7 @@ describe("AccountMenu desktop update", () => {
     renderMenu();
     const menu = await openMenu();
     await vi.waitFor(() =>
-      expect(menu).toHaveTextContent("Linger 0.1.4 is available"),
+      expect(menu).toHaveTextContent("Zerospace 0.1.4 is available"),
     );
     expect(screen.getByTestId("account-update-dot")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("menuitem", { name: "Download Update" }));

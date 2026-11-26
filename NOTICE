@@ -1,4 +1,17 @@
-Linger - Third-Party and Asset Notices
+Zerospace - Third-Party and Asset Notices
+
+Zerospace is a fork of Linger (https://github.com/simplexai-labs/linger),
+Copyright (c) 2026 SIMPLEX AI TECHNOLOGIES PTE. LTD., licensed under the terms
+in LICENSE. References to "Linger" below and in LICENSE refer to that upstream
+work.
+
+0. Zerospace identity
+   Path: apps/assets/logo/ (and its copies in apps/web/public/,
+   apps/desktop/resources/ and assets/logo-horizontal.svg)
+   The orbit-and-Z mark is original to Zerospace. The wordmark is set in
+   Inter Display SemiBold (SIL Open Font License 1.1, https://rsms.me/inter/),
+   converted to outlines.
+
 
 This file lists third-party material and non-code assets shipped with this
 repository and the terms that apply to them. It does not change the license of
